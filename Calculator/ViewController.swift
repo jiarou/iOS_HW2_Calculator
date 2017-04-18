@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import Darwin
+
 
 
 class ViewController: UIViewController {
     var currentNumber:Double = 0
     var total:Double = 0
     var operatorButton = "0"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -71,8 +74,6 @@ class ViewController: UIViewController {
             firstTime = "+"
             changeStage = "+"
             if currentNumber - Double(Int(currentNumber)) == 0.0 {
-                
-               
                 currentNumber = -Double(currentValue)!
                  currentValue = String(Int(currentNumber))
             }else{
@@ -93,8 +94,6 @@ class ViewController: UIViewController {
                  currentNumber = -Double(currentValue)!
                 currentValue = String(currentNumber)
             }
-            
-        
         }else{
             firstTime = "+"
             changeStage = "+"
@@ -102,6 +101,31 @@ class ViewController: UIViewController {
         }
 
     }
+    
+    
+
+   
+    @IBAction func ZeroButton(_ sender: UIButton) {
+        if currentValue == "0" && changeStage == "+"{
+            currentValue = "0"
+            currentNumber = Double(currentValue)!
+            
+        }else if changeStage == "-" {
+            if currentValue == "0" {
+                currentValue = "-0"
+                currentNumber = Double(currentValue)!
+            }else{
+                currentValue += "0"
+                currentNumber = Double(currentValue)!
+            }
+        }else{
+            currentValue += "0"
+            currentNumber = Double(currentValue)!
+        }
+        
+    }
+    
+    
     
 
     @IBAction func one(_ sender: UIButton) {
@@ -125,11 +149,18 @@ class ViewController: UIViewController {
    
 
     @IBAction func two(_ sender: UIButton) {
-        if currentValue == "0"{
+        if currentValue == "0" && changeStage == "+"{
             currentValue = "2"
             currentNumber = Double(currentValue)!
-       
-
+            
+        }else if changeStage == "-" {
+            if currentValue == "0" {
+                currentValue = "-2"
+                currentNumber = Double(currentValue)!
+            }else{
+                currentValue += "2"
+                currentNumber = Double(currentValue)!
+            }
         }else{
             currentValue += "2"
             currentNumber = Double(currentValue)!
@@ -139,15 +170,164 @@ class ViewController: UIViewController {
     
     @IBAction func three(_ sender: UIButton) {
         
-        if currentValue == "0"{
+        if currentValue == "0" && changeStage == "+"{
             currentValue = "3"
             currentNumber = Double(currentValue)!
+            
+        }else if changeStage == "-" {
+            if currentValue == "0" {
+                currentValue = "-3"
+                currentNumber = Double(currentValue)!
+            }else{
+                currentValue += "3"
+                currentNumber = Double(currentValue)!
+            }
         }else{
             currentValue += "3"
             currentNumber = Double(currentValue)!
         }
     }
 
+    
+    
+    @IBAction func four(_ sender: UIButton) {
+        
+        if currentValue == "0" && changeStage == "+"{
+            currentValue = "4"
+            currentNumber = Double(currentValue)!
+            
+        }else if changeStage == "-" {
+            if currentValue == "0" {
+                currentValue = "-4"
+                currentNumber = Double(currentValue)!
+            }else{
+                currentValue += "4"
+                currentNumber = Double(currentValue)!
+            }
+        }else{
+            currentValue += "4"
+            currentNumber = Double(currentValue)!
+        }
+    
+    }
+    
+    
+    @IBAction func five(_ sender: UIButton) {
+        if currentValue == "0" && changeStage == "+"{
+            currentValue = "5"
+            currentNumber = Double(currentValue)!
+            
+        }else if changeStage == "-" {
+            if currentValue == "0" {
+                currentValue = "-5"
+                currentNumber = Double(currentValue)!
+            }else{
+                currentValue += "5"
+                currentNumber = Double(currentValue)!
+            }
+        }else{
+            currentValue += "5"
+            currentNumber = Double(currentValue)!
+        }
+        
+        
+        
+    }
+    
+    
+    @IBAction func six(_ sender: UIButton) {
+        
+        if currentValue == "0" && changeStage == "+"{
+            currentValue = "6"
+            currentNumber = Double(currentValue)!
+            
+        }else if changeStage == "-" {
+            if currentValue == "0" {
+                currentValue = "-6"
+                currentNumber = Double(currentValue)!
+            }else{
+                currentValue += "6"
+                currentNumber = Double(currentValue)!
+            }
+        }else{
+            currentValue += "6"
+            currentNumber = Double(currentValue)!
+        }
+        
+        
+    }
+    
+    
+    @IBAction func seven(_ sender: UIButton) {
+        if currentValue == "0" && changeStage == "+"{
+            currentValue = "7"
+            currentNumber = Double(currentValue)!
+            
+        }else if changeStage == "-" {
+            if currentValue == "0" {
+                currentValue = "-7"
+                currentNumber = Double(currentValue)!
+            }else{
+                currentValue += "7"
+                currentNumber = Double(currentValue)!
+            }
+        }else{
+            currentValue += "7"
+            currentNumber = Double(currentValue)!
+        }
+        
+    
+    
+    
+    }
+    
+    
+    @IBAction func eight(_ sender: UIButton) {
+        
+        if currentValue == "0" && changeStage == "+"{
+            currentValue = "8"
+            currentNumber = Double(currentValue)!
+            
+        }else if changeStage == "-" {
+            if currentValue == "0" {
+                currentValue = "-8"
+                currentNumber = Double(currentValue)!
+            }else{
+                currentValue += "8"
+                currentNumber = Double(currentValue)!
+            }
+        }else{
+            currentValue += "8"
+            currentNumber = Double(currentValue)!
+        }
+        
+    }
+    
+    
+    @IBAction func nine(_ sender: UIButton) {
+        if currentValue == "0" && changeStage == "+"{
+            currentValue = "9"
+            currentNumber = Double(currentValue)!
+            
+        }else if changeStage == "-" {
+            if currentValue == "0" {
+                currentValue = "-9"
+                currentNumber = Double(currentValue)!
+            }else{
+                currentValue += "9"
+                currentNumber = Double(currentValue)!
+            }
+        }else{
+            currentValue += "9"
+            currentNumber = Double(currentValue)!
+        }
+        
+        
+    }
+    
+    
+    
+    
     
     @IBAction func zero(_ sender: UIButton) {
         
@@ -243,8 +423,157 @@ class ViewController: UIViewController {
       
     }
     
+    
+    @IBAction func percentage(_ sender: UIButton) {
+
+        if currentValue == "0"{
+            currentValue = "0"
+        }else if total == 0  {
+            total = currentNumber*0.01
+            currentValue = String(currentNumber*0.01)
+            currentNumber = 0
+         
+        }else{
+            total *= 0.01
+            currentNumber = 0
+            currentValue = String(total)
+        }
+        
+    }
+    
+    @IBAction func powButton(_ sender: UIButton) {
+        
+        changeStage = "+"
+        
+        if currentValue == "0"{
+            currentValue = "0"
+        }else if total == 0  {
+            total = currentNumber
+            currentNumber = 0
+            currentValue = "0"
+            operatorButton = "^"
+            
+        }else if operatorButton=="="{
+            total = Double(total)
+            currentNumber = 0
+            currentValue = "0"
+            operatorButton = "^"
+        
+        
+        }else{
+            total = pow(Double(total),Double(currentNumber))
+            currentNumber = 0
+            currentValue = "0"
+            operatorButton = "^"
+        }
+
+    }
+    
+    
+    @IBAction func squareButton(_ sender: UIButton) {
+        changeStage = "+"
+        if currentValue == "0"{
+            total =  sqrt(Double(currentNumber))
+            currentValue = "0"
+            operatorButton = "sq"
+        }else if total == 0  {
+            total = Double(currentNumber)
+            currentNumber = 0
+            currentValue = "0"
+            operatorButton = "sq"
+            
+        }else if operatorButton=="="{
+            total = Double(total)
+            currentNumber = 0
+            currentValue = "0"
+            operatorButton = "sq"
+        }else{
+          total =  sqrt(Double(currentNumber))
+            currentValue = "0"
+            operatorButton = "sq"
+        }
+    }
+    
+    @IBAction func logButton(_ sender: UIButton) {
+        changeStage = "+"
+        if currentValue == "0"{
+            total =   log10(Double(currentNumber))
+            currentValue = "0"
+            operatorButton = "log10"
+        }else if total == 0  {
+            total = Double(currentNumber)
+            currentNumber = 0
+            currentValue = "0"
+            operatorButton = "log10"
+            
+        }else if operatorButton=="="{
+            total = Double(total)
+            currentNumber = 0
+            currentValue = "0"
+            operatorButton = "log10"
+        }else{
+            total =  log10(Double(currentNumber))
+            currentValue = "0"
+            operatorButton = "log10"
+        }
+
+        
+    }
+
+
+    @IBAction func piButton(_ sender: UIButton) {
+        if currentValue == "0"{
+            currentValue = "3.14159265359"
+             total = 3.14159265359
+        }else if total == 0  {
+            total = currentNumber*3.14159265359
+            currentValue = String(currentNumber*3.14159265359)
+            currentNumber = 0
+            
+        }else{
+            
+            total *= 3.14159265359
+            currentNumber = 0
+            currentValue = String(total)
+            
+        }
+    }
+    
+    
+    @IBAction func eButton(_ sender: UIButton) {
+        changeStage = "+"
+        if operatorButton=="e"{
+            total *=  exp(Double(1))
+            currentValue = "0"
+            operatorButton = "e"
+         
+        }else if currentValue == "0"{
+         
+            total = exp(Double(1))
+            currentValue = String(total)
+            operatorButton = "e"
+            
+        }else if total == 0  {
+            total = Double(currentNumber)
+            currentNumber = 0
+            currentValue = "0"
+            operatorButton = "e"
+            
+        }else if operatorButton=="="{
+            total = Double(total)
+            currentNumber = 0
+            currentValue = "0"
+            operatorButton = "e"
+        }else{
+            total *=  exp(Double(1))
+            currentValue = "0"
+            operatorButton = "e"
+        }
+        
+    }
+    
     func turnToInt(){
-      var  checkNumber = total - Double(Int(total))
+      var checkNumber = total - Double(Int(total))
         if checkNumber == 0.0 {
             currentValue = String(Int(total))
         }else{
@@ -268,6 +597,23 @@ class ViewController: UIViewController {
         }else if operatorButton == "/"{
          total /=  currentNumber
           turnToInt()
+        }else if operatorButton == "^"{
+           
+           total = pow(Double(total),Double(currentNumber))
+            turnToInt()
+           
+        }else if operatorButton == "sq"{
+            total =  sqrt(Double(currentNumber))
+            turnToInt()
+            
+        }else if operatorButton == "e"{
+            total *=  exp(Double(1))
+            turnToInt()
+            
+        }else if operatorButton == "log10"{
+            total =  log10(Double(currentNumber))
+            turnToInt()
+            
         }else if operatorButton == "=" {
             if total == 0 {
                 if currentNumber == 0 {
