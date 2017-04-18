@@ -44,16 +44,41 @@ class ViewController: UIViewController {
             changeStage = "+"
             currentValue = "0"
         
+        }else if total != 0 && changeStage=="-"{
+            firstTime = "+"
+            changeStage = "+"
+            if total - Double(Int(total)) == 0.0 {
+                total = Double(total)
+                currentValue = String(Int(total))
+            }else{
+               
+               total = Double(total)
+               currentValue = String(total)
+            }
+            
+        }else if total != 0 && changeStage=="+" {
+            
+            firstTime = "+"
+            changeStage = "-"
+            if total - Double(Int(total)) == 0.0 {
+                total = -Double(total)
+                currentValue = String(Int(total))
+            }else{
+               total = -Double(total)
+               currentValue = String(total)
+            }
         }else if currentValue != "0" && changeStage=="-"{
             firstTime = "+"
             changeStage = "+"
             if currentNumber - Double(Int(currentNumber)) == 0.0 {
                 
-                currentValue = String(Int(-currentNumber))
-                currentNumber = Double(currentValue)!
+               
+                currentNumber = -Double(currentValue)!
+                 currentValue = String(Int(currentNumber))
             }else{
+                
+                 currentNumber = -Double(currentValue)!
                   currentValue = String(-currentNumber)
-                 currentNumber = Double(currentValue)!
             }
             
         }else if currentValue != "0" && changeStage=="+" {
@@ -61,12 +86,12 @@ class ViewController: UIViewController {
             firstTime = "+"
             changeStage = "-"
             if currentNumber - Double(Int(currentNumber)) == 0.0 {
-                
-                currentValue = String(Int(-currentNumber))
-                 currentNumber = Double(currentValue)!
+                 currentNumber = -Double(currentValue)!
+                 currentValue = String(Int(currentNumber))
             }else{
+                
+                 currentNumber = -Double(currentValue)!
                 currentValue = String(currentNumber)
-                 currentNumber = Double(currentValue)!
             }
             
         
