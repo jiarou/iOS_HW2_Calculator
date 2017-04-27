@@ -351,6 +351,25 @@ class ViewController: UIViewController {
         changeStage = "+"
         if currentValue == "0"{
             currentValue = "0"
+        }else if operatorButton == "-" {
+            total -= currentNumber
+            currentNumber = 0
+            currentValue = "0"
+            operatorButton = "+"
+        
+        }else if operatorButton == "*" {
+        
+            total *= currentNumber
+            currentNumber = 0
+            currentValue = "0"
+            operatorButton = "+"
+        
+        }else if operatorButton == "/"{
+            total /= currentNumber
+            currentNumber = 0
+            currentValue = "0"
+            operatorButton = "+"
+        
         }else{
             total += currentNumber
             currentNumber = 0
@@ -370,6 +389,25 @@ class ViewController: UIViewController {
             currentNumber = 0
             currentValue = "0"
             operatorButton = "-"
+        }else if operatorButton == "+"{
+            total += currentNumber
+            currentNumber = 0
+            currentValue = "0"
+            operatorButton = "-"
+        
+        }else if operatorButton == "*" {
+            
+            total *= currentNumber
+            currentNumber = 0
+            currentValue = "0"
+            operatorButton = "-"
+            
+        }else if operatorButton == "/"{
+            total /= currentNumber
+            currentNumber = 0
+            currentValue = "0"
+            operatorButton = "-"
+            
         }else{
             total -= currentNumber
             currentNumber = 0
@@ -393,6 +431,23 @@ class ViewController: UIViewController {
             currentValue = "0"
             operatorButton = "*"
         
+        }else if operatorButton == "+"{
+            total += currentNumber
+            currentNumber = 0
+            currentValue = "0"
+            operatorButton = "*"
+        }else if operatorButton == "-" {
+            total -= currentNumber
+            currentNumber = 0
+            currentValue = "0"
+            operatorButton = "*"
+        
+        }else if operatorButton == "/"{
+            total /= currentNumber
+            currentNumber = 0
+            currentValue = "0"
+            operatorButton = "*"
+            
         }else{
             currentNumber=1
             total *= currentNumber
@@ -409,6 +464,24 @@ class ViewController: UIViewController {
         }else if total == 0  {
             
             total = currentNumber
+            currentNumber = 0
+            currentValue = "0"
+            operatorButton = "/"
+            
+        }else if operatorButton == "+"{
+            total += currentNumber
+            currentNumber = 0
+            currentValue = "0"
+            operatorButton = "/"
+        }else if operatorButton == "-" {
+            total -= currentNumber
+            currentNumber = 0
+            currentValue = "0"
+            operatorButton = "/"
+            
+        }else if operatorButton == "*" {
+            
+            total *= currentNumber
             currentNumber = 0
             currentValue = "0"
             operatorButton = "/"
